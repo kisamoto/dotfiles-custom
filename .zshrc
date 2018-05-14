@@ -99,6 +99,7 @@ source /usr/local/etc/profile.d/z.sh
 # Go setup
 export PATH=$PATH:$(go env GOPATH)/bin
 export GOPATH=$(go env GOPATH)
+export GOBIN=$(go env GOPATH)/bin
 
 export GPG_TTY=$(tty)
 
@@ -117,12 +118,24 @@ eval "$(thefuck --alias)"
 # Add "oc" command completion
 source <(oc completion zsh)
 
-# Cowsay fortune!
-cowsay $(fortune -a)
-
 # NVM for multiple node versions
 export NVM_DIR="$HOME/.nvm"
 . "/usr/local/opt/nvm/nvm.sh"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+
+# Custom functions
+encstr() {
+   echo -n "$2" | ansible-vault encrypt_string --stdin-name 'secret' --vault-password-file="$1" | pbcopy
+}
+
+dencstr() {
+   echo "$2" | ansible-vault decrypt --vault-password-file="$1" /dev/stdin --output=/dev/stderr > /dev/null
+}
+
+# Cowsay fortune!
+cowsay $(fortune -a)
+
+
+
