@@ -21,6 +21,7 @@ alias yt="youtube-dl -o $HOME/Downloads/%(title)s"
 alias tns="tmux new-session -s"
 alias co="code ."
 alias pup="please update"
+alias rl="realize" # https://github.com/oxequa/realize
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
