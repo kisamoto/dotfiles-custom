@@ -171,4 +171,4 @@ alias reload="exec $SHELL -l"
 alias path='echo -e ${PATH//:/\\n}'
 
 # Terraform
-alias tf=terraform
+alias tf=terragrunt
