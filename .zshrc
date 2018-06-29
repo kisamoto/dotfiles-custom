@@ -139,3 +139,4 @@ cowsay $(fortune -a)
 
 
 
+. "/Users/ewan/.acme.sh/acme.sh.env"
