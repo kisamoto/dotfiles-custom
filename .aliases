@@ -17,11 +17,21 @@ alias g="git"
 alias h="history"
 alias j="jobs"
 alias nb="jupyter notebook --notebook-dir=$JUPYTER_NB_DIR" # use a default notebook directory
-alias yt="youtube-dl -o $HOME/Downloads/%(title)s"
+alias yt="youtube-dl -o \"$HOME/Downloads/%(title)s\""
 alias tns="tmux new-session -s"
+alias tls="tmux list-sessions"
+alias tas="tmux attach-session -t"
 alias co="code ."
 alias pup="please update"
 alias rl="realize" # https://github.com/oxequa/realize
+alias agli="ansible-galaxy init --offline --init-path=./roles/"
+
+# Task warrior
+alias t="task"
+alias ta="task add"
+alias tl="task list"
+alias td="task done"
+alias tdl="task delete"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
