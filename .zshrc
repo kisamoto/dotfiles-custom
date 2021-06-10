@@ -90,7 +90,7 @@ export PATH=$PATH:$(yarn global bin)
 
 # Virtualenvwrapper setup
 export WORKON_HOME=~/.venvs
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 source /usr/local/bin/virtualenvwrapper.sh
 
 # 'z' setup
@@ -112,9 +112,6 @@ export JUPYTER_NB_DIR=$HOME/OneDrive/Jupyter/Notebooks
 # AndroidSDK path
 export ANDROID_SDK_ROOT=/usr/local/share/android-sdk
 
-# TheFuck
-eval "$(thefuck --alias)"
-
 # Add "oc" command completion
 source <(oc completion zsh)
 
@@ -123,11 +120,10 @@ export NVM_DIR="$HOME/.nvm"
 . "/usr/local/opt/nvm/nvm.sh"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
 
 # Custom functions
 encstr() {
-   echo -n "$2" | ansible-vault encrypt_string --stdin-name 'secret' --vault-password-file="$1" | pbcopy
+   echo -n "$2" | ansible-vault encrypt_string --vault-password-file="$1" | pbcopy
 }
 
 dencstr() {
@@ -139,4 +135,18 @@ cowsay $(fortune -a)
 
 
 
-. "/Users/ewan/.acme.sh/acme.sh.env"
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+# Add LaTeX utils from BasicTeX to PATH
+export PATH="$PATH:/Library/TeX/texbin"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/ewan/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ewan/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/ewan/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ewan/google-cloud-sdk/completion.zsh.inc'; fi
+
+# And now for adding kubectl aliases
+[ -f ~/.kubectl_aliases ] && source ~/.kubectl_aliases
+function kubectl() { echo "+ kubectl $@"; command kubectl $@; }
