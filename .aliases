@@ -189,3 +189,11 @@ alias tf=terragrunt
 
 # acme.sh
 alias acme.sh=~/.acme.sh/acme.sh
+
+command -v pbcopy /dev/null || alias pbcopy="wl-copy --trim-newline "
+command -v pbpaste /dev/null || alias pbpaste="wl-paste --no-newline "
+command -v open /dev/null || alias open="xdg-open &>/dev/null"
+
+# navigation
+alias po=popd
+alias pu=pushd
