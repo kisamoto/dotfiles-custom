@@ -85,23 +85,25 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source ~/.aliases
 
-# Add yarn global to path
-export PATH=$PATH:$(yarn global bin)
-
 # Virtualenvwrapper setup
-export WORKON_HOME=~/.venvs
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-source /usr/local/bin/virtualenvwrapper.sh
+#export WORKON_HOME=~/.venvs
+#export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+#source /usr/local/bin/virtualenvwrapper.sh
 
 # 'z' setup
-source /usr/local/etc/profile.d/z.sh
+source /opt/homebrew/etc/profile.d/z.sh
 
 # Go setup
 export PATH=$PATH:$(go env GOPATH)/bin
 export GOPATH=$(go env GOPATH)
 export GOBIN=$(go env GOPATH)/bin
 
+# Rust setup
+export PATH=$PATH:$HOME/.cargo/bin
+
 export GPG_TTY=$(tty)
+
+export PATH="$HOME/Library/Python/3.8/bin:$HOME/bin:$PATH"
 
 # Custom path
 export DEVEL=$HOME/Development
@@ -113,11 +115,14 @@ export JUPYTER_NB_DIR=$HOME/OneDrive/Jupyter/Notebooks
 export ANDROID_SDK_ROOT=/usr/local/share/android-sdk
 
 # Add "oc" command completion
-source <(oc completion zsh)
+#source <(oc completion zsh)
 
 # NVM for multiple node versions
-export NVM_DIR="$HOME/.nvm"
-. "/usr/local/opt/nvm/nvm.sh"
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+
+# Add yarn global to path
+export PATH=$PATH:$(yarn global bin)
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 
@@ -131,7 +136,7 @@ dencstr() {
 }
 
 # Cowsay fortune!
-cowsay $(fortune -a)
+#cowsay $(fortune -a)
 
 
 
@@ -150,3 +155,8 @@ if [ -f '/Users/ewan/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ewan
 # And now for adding kubectl aliases
 [ -f ~/.kubectl_aliases ] && source ~/.kubectl_aliases
 function kubectl() { echo "+ kubectl $@"; command kubectl $@; }
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+
+export PATH="$HOME/.poetry/bin:$PATH"
+export PATH="/opt/homebrew/opt/openssl@3/bin:$PATH"
