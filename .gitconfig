@@ -189,6 +189,7 @@
 [user]
 	signingkey = E34E7F21D7272734
 	email = egcjones@gmail.com
+	name = Ewan Jones
 [gpg]
 	program = gpg
 [color "diff-highlight"]
