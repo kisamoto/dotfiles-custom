@@ -7,7 +7,7 @@ export ZSH=/Users/ewan/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="agnoster"
+ZSH_THEME="passion"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -103,7 +103,7 @@ export PATH=$PATH:$HOME/.cargo/bin
 
 export GPG_TTY=$(tty)
 
-export PATH="$HOME/Library/Python/3.8/bin:$HOME/bin:$PATH"
+export PATH="$HOME/Library/Python/3.8/bin:$HOME/.local/bin:$HOME/bin:$PATH"
 
 # Custom path
 export DEVEL=$HOME/Development
