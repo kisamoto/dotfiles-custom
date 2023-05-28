@@ -19,7 +19,7 @@ alias g="git"
 alias h="history"
 alias j="jobs"
 alias nb="jupyter notebook --notebook-dir=$JUPYTER_NB_DIR" # use a default notebook directory
-alias yt="yt-dlp -o \"$HOME/Downloads/%(title)s [%(id)s].%(ext)s\""
+alias yt="yt-dlp"
 alias tns="tmux new-session -s"
 alias tls="tmux list-sessions"
 alias tas="tmux attach-session -t"
@@ -190,9 +190,9 @@ alias tf=terragrunt
 # acme.sh
 alias acme.sh=~/.acme.sh/acme.sh
 
-command -v pbcopy /dev/null || alias pbcopy="wl-copy --trim-newline "
-command -v pbpaste /dev/null || alias pbpaste="wl-paste --no-newline "
-command -v open /dev/null || alias open="xdg-open &>/dev/null"
+command -v pbcopy > /dev/null || alias pbcopy="wl-copy --trim-newline "
+command -v pbpaste > /dev/null || alias pbpaste="wl-paste --no-newline "
+command -v open > /dev/null || alias open="xdg-open &>/dev/null"
 
 # navigation
 alias po=popd
