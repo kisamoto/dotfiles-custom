@@ -146,12 +146,6 @@ export PATH="$PATH:$HOME/.rvm/bin"
 # Add LaTeX utils from BasicTeX to PATH
 export PATH="$PATH:/Library/TeX/texbin"
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/ewan/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ewan/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/ewan/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ewan/google-cloud-sdk/completion.zsh.inc'; fi
-
 # And now for adding kubectl aliases
 [ -f ~/.kubectl_aliases ] && source ~/.kubectl_aliases
 function kubectl() { echo "+ kubectl $@"; command kubectl $@; }
@@ -160,3 +154,9 @@ export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
 export PATH="$HOME/.poetry/bin:$PATH"
 export PATH="/opt/homebrew/opt/openssl@3/bin:$PATH"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/ewan/bin/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ewan/bin/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/ewan/bin/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ewan/bin/google-cloud-sdk/completion.zsh.inc'; fi
