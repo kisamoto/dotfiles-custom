@@ -19,7 +19,7 @@ alias g="git"
 alias h="history"
 alias j="jobs"
 alias nb="jupyter notebook --notebook-dir=$JUPYTER_NB_DIR" # use a default notebook directory
-alias yt="yt-dlp"
+alias yt="yt-dlp --config-location=~/yt-dlp/config"
 alias tns="tmux new-session -s"
 alias tls="tmux list-sessions"
 alias tas="tmux attach-session -t"
