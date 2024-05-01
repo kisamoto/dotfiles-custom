@@ -1,3 +1,6 @@
+> [!WARNING]
+> This repo is read-only as dotfiles are now managed with Stow in [`kisamoto/dotfiles`](https://github.com/kisamoto/dotfiles)
+
 # Mathias’s dotfiles
 
 ![Screenshot of my shell prompt](https://i.imgur.com/EkEtphC.png)
